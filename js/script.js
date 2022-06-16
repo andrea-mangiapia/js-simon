@@ -12,7 +12,7 @@ alert(`Memorizza questi 5 numeri ${generateNumbers}`);
 alert('Clicca ok, dopo 30 secondi dovrai scrivere i numeri visualizzati in precedenza');
 
 // Tempo di attesa (30 secondi) prima che l'utente digiti i numeri
-setTimeout(startGame, 2000);
+setTimeout(startGame, 30000);
 
 // Richiamo la funzione al termine dei 30 secondi 
 function startGame(){
