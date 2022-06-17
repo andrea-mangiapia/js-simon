@@ -7,12 +7,12 @@ let generateNumbers = generateArray(5, 1, 100);
 console.log(generateNumbers);
 
 // Nell'alert faccio vedere i numeri generati
-alert(`Memorizza questi 5 numeri ${generateNumbers}`);
+alert(`Memorizza questi 5 numeri ${generateNumbers.join(' - ')}`);
 // un'alert per dare le istruzioni all'utente
 alert('Clicca ok, dopo 30 secondi dovrai scrivere i numeri visualizzati in precedenza');
 
 // Tempo di attesa (30 secondi) prima che l'utente digiti i numeri
-setTimeout(startGame, 30000);
+setTimeout(startGame, 3000);
 
 // Richiamo la funzione al termine dei 30 secondi 
 function startGame(){
@@ -22,14 +22,14 @@ function startGame(){
     for( let i = 0; i < 5; i++) {
         let userNumber = parseInt(prompt('Indovina i 5 numeri'))
         // SE il numero inserito è incluso nell'array dei numeri da indovinare lo inserisco in un array
-        if(generateNumbers.includes(userNumber)) {
+        if(generateNumbers.includes(userNumber) && !arrayUser.includes(userNumber)) {
             arrayUser.push(userNumber);
             console.log(arrayUser);
         }
     }
 
     // Stampo il risultato con un alert: indico quanti numeri sono stati indovinati dall'utente e quali
-    alert(`Hai indovinato ${arrayUser.length} numero/i e sono i seguenti: ${arrayUser}`);  
+    alert(`Hai indovinato ${arrayUser.length} numero/i e sono i seguenti: ${arrayUser.join(' - ')}`);  
 }
 
 
